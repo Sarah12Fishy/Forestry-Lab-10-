@@ -106,13 +106,12 @@ tm_shape(slope, alpha = 0.5) +
 # c. Basal Area (BA) Distribution
 
 ttm()
-tm_shape(slope, alpha = 0.5) +
-  tm_raster(style = "cont", alpha = 0.6, title = "Slope (deg)") +
-  tm_shape(sf_plot) +
-  tm_polygons('Common.name', title = "Dom_Species", alpha = 0.6) +
-  tm_layout(title = "Dominant trees by slope",
+tm_shape(sf_plot) +
+  tm_polygons('BA', title = "Basal Area (sq_ft/acre)", palette = "brewer.spectral") +
+  tm_layout(title = "Basal Area Distribution",
             legend.outside = TRUE, legend.outside.size = 0.2) +
-  tm_text("Plot", ymod = -0.9, size = 1.2)
+  tm_text("Plot", ymod = -1.5, size = 1.2) +
+  tm_scale_bar()
 
 # d. Trees Per Acre (TPA) Distribution
 
